@@ -1,10 +1,12 @@
 import React from "react";
+import Checkbox from "../Checkbox";
 
 const Task = ({ text, complete }) => {
 
     return (
-        <div className={`task-item ${category}`}>
-            <p>{text}</p>
+        <div className={`task-item`}>
+            <Checkbox />
+            <p className={complete ? "done" : ""}>{text}</p>
         </div>
     )
 }

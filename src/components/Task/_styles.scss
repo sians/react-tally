@@ -1,0 +1,10 @@
+.task-item {
+    padding: 5px;
+    text-align: left;
+    p {
+        font-size: 0.8rem;
+    }
+    p.done {
+        text-decoration: line-through;
+    }
+}

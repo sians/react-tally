@@ -3,7 +3,10 @@ import Panel from "../../components/Panel";
 
 const Home = () => {
     return (
-        <Panel category="today"/>
+        <div className="display-container">
+            <Panel category="today"/>
+            <Panel category="soon" />
+        </div>
     )
 }
 
