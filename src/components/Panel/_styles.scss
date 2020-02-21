@@ -1,0 +1,12 @@
+.task-panel {
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(255, 220, 220, 1);
+    h5 {
+        padding: 20px;
+        font-size: 1.6rem;
+    }
+}
+.task-panel.today {
+    color:  rgb(248, 88, 88);
+}
