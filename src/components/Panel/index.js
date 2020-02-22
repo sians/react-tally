@@ -1,15 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 
+import PanelMenu from "./PanelMenu"
 import Task from "../Task"
 
-const Panel = ({ category }) => {
+const Panel = ({ category, tasks, colors }) => {
+    const [isHovering, setIsHovering] = useState(false);
+    
+    const handleMouseHover = () => { 
+        setIsHovering(!isHovering)
+    }
+    
+    const taskList = tasks.map((task) => {
+        return <Task 
+            key={task.id}
+            text={task.text}
+            complete={task.complete}
+            colors={colors}
+        />
+    })
 
     return (
-        <div className={`task-panel ${category}`}>
+        <div className={`task-panel ${category}`}
+            onMouseEnter={handleMouseHover}
+            onMouseLeave={handleMouseHover}>
+                
+            {isHovering ? <PanelMenu colors={colors} /> : <div className="panel-menu"></div>}
+            
             <h5>{category}</h5>
-            <Task text="Hardcoded task woo" complete={false}/>
-            <Task text="Another one" complete={true}/>
-            <Task text="Yay tasks are fun aren't they super fun yes they are yay" complete={false}/>
+            {taskList}
         </div>
     )
 }

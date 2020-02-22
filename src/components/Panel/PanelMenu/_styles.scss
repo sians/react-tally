@@ -1,0 +1,17 @@
+.panel-menu {
+    padding: 10px 10px 0px;
+    margin-bottom: 10px;
+    height: 20px;
+    display:  flex;
+    justify-content: space-between;
+    // -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
+    // transition: background-color 2s;
+
+}
+.expanded-menu {
+    width:  0px;
+    display: none;
+}
+.expanded-menu.selected {
+    display: block;
+}
