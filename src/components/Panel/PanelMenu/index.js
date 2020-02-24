@@ -16,13 +16,14 @@ const PanelMenu = ({ colors }) => {
         setSelected(!selected);
         console.log(selected)
     }
+
     
     return (
         <div className="panel-menu">
             <div className={`expanded-menu ${selected ? "selected" : ""}`}>
                     <p>something</p>
             </div>
-            <Button text={menuIcon} action={handleMenuExpand} type="menu-btn" />
+            <Button text={menuIcon} action={handleMenuExpand} type="menu-btn" colors={colors}/>
             {dragIcon}
         </div>
     )

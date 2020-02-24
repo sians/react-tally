@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Panel from "../../components/Panel";
 
 const Home = () => {
-    const panels = [
+    const panelData = [
         {
             "id" : 1,
             "category" : "today",
@@ -26,6 +26,7 @@ const Home = () => {
             "colors" : {
                 "primary" : "rgb(248, 88, 88)",
                 "soft" : "rgba(255, 220, 220)",
+                "highlight" : "rgb(250,  237, 237)"
             }
         },
         {
@@ -41,6 +42,7 @@ const Home = () => {
             "colors" : {
                 "primary" : "rgb(193, 86, 255)",
                 "soft" : "rgb(238, 220, 255)",
+                "highlight" : "rgb(249, 243, 254)"
             }
         },
         {
@@ -60,10 +62,16 @@ const Home = () => {
             ],
             "colors" : {
                 "primary" : "rgb(0, 0, 0)",
-                "soft" : "rgb(255, 255, 255)",
+                "soft" : "rgba(255, 255, 255)",
+                "highlight" : "rgba(255, 255, 255)"
             }
         }
     ]
+
+    const [panels, setPanels] = useState(panelData);
+
+    const [nextTaskId, setNextTaskId] = useState(7);
+    const nextPanelId = 4;
 
     const panelsList = panels.map((panel) => {
         return <Panel 
@@ -71,6 +79,9 @@ const Home = () => {
             category={panel.category} 
             tasks={panel.tasks}
             colors={panel.colors}
+            panel={panel}
+            nextTaskId={nextTaskId}
+            setNextTaskId={setNextTaskId}
         />
     })
 
