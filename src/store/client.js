@@ -1,7 +1,8 @@
 import superagent from 'superagent'
 import Cookies from 'js-cookie'
+import normalize from 'json-api-normalizer'
 
-import { configVariables } from 'config'
+import { configVariables } from '../config'
 
 const methods = ['get', 'post', 'put', 'patch', 'delete']
 
@@ -22,7 +23,12 @@ const successResponse = (response, resolve) => {
     }
   }
 
-  return resolve({ data: response.body })
+  // return resolve({ data: response.body })
+  return resolve({ data: response.body.data, normalizedData: normalize(response.body) })
+}
+
+const errorResponse = (response, error, reject) => {
+  return reject(response.body || error)
 }
 
 export default class client {

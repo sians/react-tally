@@ -6,7 +6,7 @@ import Cookies from "js-cookie"
 import {
   actions as authActions,
   selectors as authSelectors
-} from "store/reducers/auth";
+} from "./store/reducers/auth";
 
 import './styles/main.scss';
 

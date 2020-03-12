@@ -17,7 +17,7 @@ const composeEnhancers = composeWithDevTools({})
 
 const composedEnhancers = composeEnhancers(
     applyMiddleware(...middleware),
-    ...enchancers
+    ...enhancers
 )
 
 const initializeStore = (initialState = {}) => {
